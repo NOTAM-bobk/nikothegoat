@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nico Schultz</title>
+<meta name="description" content="Nico Schultz — official site">
+
+<!-- Fonts: Fraunces (display), Inter (body), JetBrains Mono (stats/labels) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============ LOADER ============ -->
+<div id="loader" aria-hidden="true">
+  <div class="loader-inner">
+    <div class="loader-mark">
+      <span class="loader-dot"></span>
+      <span class="loader-dot"></span>
+      <span class="loader-dot"></span>
+    </div>
+    <p class="loader-label">LOADING</p>
+  </div>
+</div>
+
+<!-- ============ AMBIENT DOT FIELD ============ -->
+<canvas id="dot-field" aria-hidden="true"></canvas>
+
+<!-- ============ NAV ============ -->
+<header id="site-nav" class="site-nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-logo">N. SCHULTZ</a>
+
+    <nav class="nav-links" id="nav-links" aria-label="Page sections">
+      <!-- populated from CONFIG.nav in script.js -->
+    </nav>
+
+    <div class="nav-right">
+      <div class="nav-socials" id="nav-socials" aria-label="Social links">
+        <!-- populated from CONFIG.socials in script.js -->
+      </div>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <p class="hero-eyebrow">ATHLETE&nbsp;/&nbsp;PORTFOLIO</p>
+      <h1 class="hero-name">
+        <span id="typed-name" aria-label="Nico Schultz"></span><span class="cursor" aria-hidden="true">|</span>
+      </h1>
+      <p class="hero-tagline" id="hero-tagline">Distance runner. Record chaser. Still counting.</p>
+      <a href="#journey" class="scroll-cue" aria-label="Scroll to explore">
+        <span class="scroll-cue-line"></span>
+        <span class="scroll-cue-text">SCROLL</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ SOCIAL STRIP ============ -->
+  <section class="social-strip" aria-label="Follow Nico">
+    <div class="social-strip-inner" id="social-strip">
+      <!-- populated from CONFIG.socials in script.js -->
+    </div>
+  </section>
+
+  <!-- ============ PRs ============ -->
+  <section class="prs" id="prs">
+    <div class="section-inner">
+      <p class="section-eyebrow">01 — BY THE NUMBERS</p>
+      <h2 class="section-title">Personal Records</h2>
+      <p class="section-sub">Times, marks, and results — updated after every meet.</p>
+
+      <div class="pr-grid" id="pr-grid">
+        <!-- populated from CONFIG.prs in script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SPONSORS ============ -->
+  <section class="sponsors" id="sponsors">
+    <div class="section-inner">
+      <p class="section-eyebrow">02 — BACKED BY</p>
+      <h2 class="section-title">Sponsors &amp; Partners</h2>
+      <p class="section-sub">The teams and brands behind every mile.</p>
+    </div>
+
+    <div class="sponsor-carousel" id="sponsor-carousel-wrap">
+      <div class="sponsor-track" id="sponsor-track">
+        <!-- populated + duplicated from CONFIG.sponsors in script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ JOURNEY / TIMELINE ============ -->
+  <section class="journey" id="journey">
+    <div class="section-inner">
+      <p class="section-eyebrow">03 — THE JOURNEY</p>
+      <h2 class="section-title">Middle School to Now</h2>
+      <p class="section-sub">Every season builds on the last.</p>
+    </div>
+
+    <div class="timeline-wrap">
+      <svg class="timeline-line" id="timeline-line" viewBox="0 0 4 1000" preserveAspectRatio="none" aria-hidden="true">
+        <path id="timeline-path" d="M2,0 L2,1000" />
+      </svg>
+      <div class="timeline-items" id="timeline-items">
+        <!-- populated from CONFIG.timeline in script.js -->
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer" id="contact">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <p class="footer-name">Nico Schultz</p>
+      <p class="footer-tag">Thanks for following the journey.</p>
+    </div>
+
+    <div class="footer-links" id="footer-links">
+      <!-- populated from CONFIG.footerLinks in script.js -->
+    </div>
+
+    <div class="footer-support">
+      <a href="#" id="footer-gofundme" class="footer-gofundme-link" target="_blank" rel="noopener">
+        Support the journey →
+      </a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; <span id="footer-year"></span> Nico Schultz. All rights reserved.</p>
+  </div>
+  <div id="footer-sentinel" aria-hidden="true"></div>
+</footer>
+
+<!-- ============ BOTTOM POPUP MODAL ============ -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+    <p class="modal-eyebrow">BEFORE YOU GO</p>
+    <h3 class="modal-title" id="modal-title">Want to help out?</h3>
+    <p class="modal-body">This site is built and maintained independently. You can reach out directly, or support Nico's season through his GoFundMe.</p>
+    <div class="modal-actions">
+      <a href="#" id="modal-contact" class="modal-btn modal-btn-primary" target="_blank" rel="noopener">Contact the Developer</a>
+      <a href="#" id="modal-gofundme" class="modal-btn modal-btn-secondary" target="_blank" rel="noopener">Visit the GoFundMe</a>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
